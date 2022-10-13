@@ -24,7 +24,6 @@ function App() {
   console.log(math.si(100000, 2, 5))
   // console.log(math.div(20, 10))
 
-
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>} >
