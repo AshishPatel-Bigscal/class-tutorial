@@ -15,3 +15,7 @@ export function mul(a, b) {
 export function div(...props) {
     return props[0] / props[1];
 }
+
+export const si = (p, r, n) => {
+    return (p * r * n) / 100
+}
