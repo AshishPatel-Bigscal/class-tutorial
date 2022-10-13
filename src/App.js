@@ -19,6 +19,7 @@ function App() {
   // });
 
   console.log(math.add(1, 2))
+  console.log(math.mul(5, 5))
   // console.log(math.div(20, 10))
 
 
