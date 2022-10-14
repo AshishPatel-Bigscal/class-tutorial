@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+export const ThemeContext = React.createContext();
+const value = {
+  color: "red",
+  name: "Ashish",
+  totalCartItem: 10,
+  totalAmount: 15000
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App />
+  <ThemeContext.Provider value={value}>
+    <App />
+  </ThemeContext.Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

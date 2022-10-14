@@ -1,9 +1,14 @@
 // import DemoClass from './DemoClass'
 // import "./math";
+import { ThemeContext } from './index'
+import { useContext } from 'react';
 import './App.css';
 import React, { Suspense } from 'react';
 import * as math from "./math";
+
+
 const Demo = React.lazy(() => import('./DemoClass'))
+
 
 function App() {
 
@@ -17,7 +22,14 @@ function App() {
   //     console.log(math.add(16, 26));
   //   });
   // });
-
+  const theme = useContext(ThemeContext);
+  const header = {
+    display: "flex",
+    flexDirection: "column",
+    alignItem: "center",
+    justifyContent: "center"
+  }
+  console.log(theme)
   console.log(math.add(1, 2))
   console.log(math.mul(5, 5))
   console.log(math.div(5, 5))
@@ -26,7 +38,14 @@ function App() {
 
   return (
     <div className="App">
-      <Suspense fallback={<div>Loading...</div>} >
+
+      <div style={header}>
+        <span>Name :{theme.name}</span>
+        <span>Total Items : {theme.totalCartItem}</span>
+        <span>Total Amount :{theme.totalAmount}</span>
+      </div>
+
+      <Suspense fallback={<div style={{ color: theme.color }}>Loading...</div>} >
         <section>
           <Demo />
         </section>
